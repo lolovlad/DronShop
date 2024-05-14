@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Подробная информация</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s8">
+            <img src="{{url_for('static', filename='img/' + product.image)}}" class="responsive-img" alt="...">
+        </div>
+        <div class="col s4">
+            <h3>Название: {{product.name}}</h3>
+            <p>{{product.description}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <p>Цена {{product.price_drone}} руб./шт</p>
+            <p>Вес {{product.weight_drone}} гр.</p>
+            <h5>Габариты дрона</h5>
+            <p>Ширина {{product.width}} мм.</p>
+            <p>Длинна {{product.length}} мм.</p>
+            <p>Высота {{product.height}} мм.</p>
+            <h5>Комплектующие</h5>
+            {% for i in product.components %}
+                <p class="card-text">{{i.name}}</p>
+            {% endfor %}
+            <a href="{{url_for('user_blueprint.add_car',  uuid=product.trace_id)}}" class="btn btn-success">В корзину</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Магазин товаров</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+      <form class="col s12" method="POST" accept="{{url_for('shop')}}">
+          <div class="row">
+              <div class="input-field col s5">
+                  {{ form.tag() }}
+                  {{ form.tag.label() }}
+              </div>
+              <div class="input-field col s3">
+                  {{ form.submit(class_="btn btn-primary ") }}
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
+
+<div class="container shop">
+    <div class="row">
+      {% for entity in sweet_products %}
+        <div class="col s3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{url_for('static', filename='img/' + entity.image)}}">
+                    <span class="card-title">{{entity.name}}</span>
+                </div>
+                <div class="card-content">
+                    <p>цена: {{entity.price_drone}}</p>
+                    <p>вес: {{entity.weight_drone}}</p>
+                    <p>тип: {{entity.type.name}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{url_for('product', uuid=entity.trace_id)}}">Подробнее</a>
+                    <a href="{{url_for('user_blueprint.add_car',  uuid=entity.trace_id)}}">В корзину</a>
+                </div>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

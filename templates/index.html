@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center white-text text-lighten-2">Drone Shop</h1>
+            <div class="row center">
+              <h5 class="header col s12 light white-text">"Drone Shop - Открывайте новые высоты!"</h5>
+            </div>
+            <br><br>
+
+          </div>
+        </div>
+        <div class="parallax"><img src="{{ url_for('static', filename='img/back/1.jpeg') }}" alt="Unsplashed background img 1" class="filter"></div>
+    </div>
+    <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Быстрая доставка</h5>
+
+            <p class="light">Мы понимаем, как важно получить ваш новый дрон как можно скорее, и поэтому предлагаем быструю и надежную доставку для всех заказов. Наши партнеры по доставке - ведущие логистические компании, которые гарантируют быструю и безопасную перевозку вашего дрона до дверей вашего дома или офиса.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Отзывчивая техподдержка</h5>
+
+            <p class="light">мы понимаем, что наши клиенты могут столкнуться с различными вопросами и проблемами при использовании своих дронов, и поэтому мы предлагаем отзывчивую и профессиональную техническую поддержку. Наша команда экспертов всегда готова помочь вам решить любые проблемы и предоставить необходимую помощь.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Разнообразие позиций</h5>
+
+            <p class="light"> гордится своим широким ассортиментом дронов от независимых производителей, которые предлагают разнообразные модели, соответствующие любым потребностям и бюджету. Наш большой выбор включает в себя:</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    <div class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center white-text text-lighten-2">Наша миссия</h1>
+            <div class="row center">
+              <h5 class="header col s12 light white-text">предоставить вам лучшие решения в области беспилотных летательных аппаратов, совместив передовые технологии и уникальный дизайн независимых брендов.</h5>
+            </div>
+            <br><br>
+
+          </div>
+        </div>
+        <div class="parallax"><img src="{{ url_for('static', filename='img/back/2.jpeg') }}" alt="Unsplashed background img 2" class="filter"></div>
+    </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Связаться с нами</h4>
+          <p class="left-align light">Если у вас есть вопросы или предложения, мы всегда рады вам помочь. Свяжитесь с нами по телефону +7 (495) 123-45-67, напишите нам на info@droneshop.ru или воспользуйтесь онлайн-чатом на нашем сайте. Мы отвечаем на все запросы в течение одного рабочего дня. Спасибо, что выбираете Drone Shop!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

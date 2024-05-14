@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 50px">
+    <div class="row">
+        <div class="col s8">
+            <img src="{{url_for('static', filename='img/' + product.drone.image)}}" class="responsive-img" alt="...">
+        </div>
+        <div class="col s4">
+            <h3>Название: {{product.drone.name}}</h3>
+            <p>{{product.drone.description}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <p>Цена {{product.drone.price_drone}} руб./шт</p>
+            <p>Вес {{product.drone.weight_drone}} гр.</p>
+            <h5>Габариты дрона</h5>
+            <p>Ширина {{product.drone.width}} мм.</p>
+            <p>Длинна {{product.drone.length}} мм.</p>
+            <p>Высота {{product.drone.height}} мм.</p>
+            <h5>Комплектующие</h5>
+            {% for i in product.drone.components %}
+                <p class="card-text">{{i.name}}</p>
+            {% endfor %}
+        </div>
+        <form method="POST" action="{{url_for('manager_blueprint.order_car_update', id_order=product.id_order, id_drone=product.id_drone)}}" class="col s12">
+                {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="input-field col s12">
+                    {{ form.count.label() }}
+                    {{ form.count(rows="3", min="0") }}
+                </div>
+            </div>
+             <div class="row">
+                <div class="col s12">
+                    {{ form.submit(class_="btn btn-primary") }}
+                    <a href="{{url_for('manager_blueprint.back_order',  id_order=product.id_order)}}" class="btn btn-danger">Отмена</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
